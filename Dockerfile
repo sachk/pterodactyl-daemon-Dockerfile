@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:6.8
 
-MAINTAINER Michael Parker, <parker@parkervcp.com>
+MAINTAINER Michael Parker, <docker@parkervcp.com>
 
 WORKDIR /srv/daemon
 
