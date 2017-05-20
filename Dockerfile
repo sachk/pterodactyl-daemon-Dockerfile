@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6.8
+FROM node:7.10.0-alpine
 
 MAINTAINER Michael Parker, <docker@parkervcp.com>
 
