@@ -2,7 +2,7 @@ version: '2'
 services:
   daemon:
     hostname: daemon
-    image: :quay.io/parkervcp/pterodactyl-daemon:testing
+    image: :quay.io/parkervcp/pterodactyl-daemon:latest
     ports:
       - "8080:8080"
     tty: true
