@@ -1,18 +1,18 @@
-FROM mhart/alpine-node:6.8
+FROM node:7.10.0-alpine
 
 MAINTAINER Michael Parker, <docker@parkervcp.com>
+
+ENv DAEMON_VERSION=v0.4.2
 
 WORKDIR /srv/daemon
 
 RUN apk update \
- && apk add openssl make gcc g++ python linux-headers paxctl gnupg tar \
- && wget https://github.com/Pterodactyl/Daemon/archive/v0.3.7.tar.gz \
- && tar --strip-components=1 -xzvf v0.3.7.tar.gz \
+ && apk add openssl make gcc g++ python linux-headers paxctl gnupg tar zip unzip coreutils \
+ && wget https://github.com/Pterodactyl/Daemon/archive/${PANEL_VERSION}.tar.gz \
+ && tar --strip-components=1 -xzvf ${DAEMON_VERSION}.tar.gz
+.tar.gz \
  && npm install --production \
- && apk del curl make gcc g++ python linux-headers paxctl gnupg tar ${DEL_PKGS} \
- && rm -rf /node-${VERSION}.tar.gz /SHASUMS256.txt.asc /node-${VERSION} ${RM_DIRS} \
- /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp /root/.gnupg \
- /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+ && apk del curl make gcc g++ python linux-headers paxctl gnupg tar ${DEL_PKGS}
 
 EXPOSE 8080
 
