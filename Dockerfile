@@ -8,7 +8,7 @@ WORKDIR /srv/daemon
 
 RUN apk update \
  && apk add openssl make gcc g++ python linux-headers paxctl gnupg tar zip unzip coreutils \
- && wget https://github.com/Pterodactyl/Daemon/archive/${PANEL_VERSION}.tar.gz \
+ && wget https://github.com/Pterodactyl/Daemon/archive/${DAEMON_VERSION}.zip \
  && tar --strip-components=1 -xzvf ${DAEMON_VERSION}.tar.gz
 .tar.gz \
  && npm install --production \
