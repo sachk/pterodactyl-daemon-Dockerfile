@@ -8,8 +8,8 @@ WORKDIR /srv/daemon
 
 RUN apk update \
  && apk add openssl make gcc g++ python linux-headers paxctl gnupg tar zip unzip coreutils \
- && wget https://github.com/Pterodactyl/Daemon/releases/download/${DAEMON_VERSION}/${DAEMON_VERSION}.tar.gz \
- && tar --strip-components=1 -xzvf ${DAEMON_VERSION}.tar.gz \
+ && wget hhttps://github.com/Pterodactyl/Daemon/releases/download/DAEMON_VERSION/daemon.tar.gz \
+ && tar --strip-components=1 -xzvf daemon.tar.gz \
  && rm ${DAEMON_VERSION}.tar.gz \
  && npm install --production \
  && apk del curl make gcc g++ python linux-headers paxctl gnupg tar ${DEL_PKGS}
