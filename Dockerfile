@@ -11,6 +11,7 @@ RUN apk add --no-cache openssl make gcc g++ python linux-headers paxctl gnupg ta
  && tar --strip-components=1 -xzvf daemon.tar.gz \
  && rm daemon.tar.gz \
  && npm install --production \
+ && addgroup -S pterodactyl && adduser -S -D -H -G pterodactyl -s /bin/false pterodactyl \
  && apk del --no-cache make gcc g++ python linux-headers paxctl gnupg
 
 EXPOSE 8080
