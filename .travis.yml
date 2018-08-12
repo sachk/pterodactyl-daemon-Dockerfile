@@ -5,9 +5,9 @@ services:
 
 before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - tag=$(curl -s 'https://api.github.com/repo/pterodactyl/daemon/releases/latest' | jq -r '.tag_name')
-  - docker build --build-arg DAEMON_VERSION=$tag -t $DOCKER_REPO:$tag .
-  - docker tag $DOCKER_REPO:$tag $DOCKER_REPO:latest
+  - TAG=$(curl -s 'https://api.github.com/repo/pterodactyl/daemon/releases/latest' | jq -r '.tag_name')
+  - docker build --build-arg DAEMON_VERSION="$TAG" -t $DOCKER_REPO:$TAG .
+  - docker tag $DOCKER_REPO:$TAG $DOCKER_REPO:latest
 script:
-  - docker push $DOCKER_REPO:$tag
+  - docker push $DOCKER_REPO:$TAG
   - docker push $DOCKER_REPO:latest
