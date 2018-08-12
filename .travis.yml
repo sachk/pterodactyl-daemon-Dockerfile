@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build --build-arg tag=${tag} -t $DOCKER_REPO:$tag .
+  - docker tag $DOCKER_REPO:$tag $DOCKER_REPO:latest
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push $DOCKER_REPO:$tag
+  - docker push $DOCKER_REPO:latest
