@@ -11,7 +11,7 @@ RUN apk add --no-cache --update wget ca-certificates openssl make gcc g++ python
  && rm daemon.tar.gz \
  && npm install --production
 
-FROM node:8-alpine
+FROM mhart/alpine-node:base-8
 
 COPY --from=builder /srv/daemon /srv/daemon/
 
@@ -22,4 +22,4 @@ EXPOSE 8080
 
 WORKDIR /srv/daemon
 
-CMD ["npm", "start"]
+CMD ["sh", "-c", "node src/index.js | node_modules/bunyan/bin/bunyan -o short"]
