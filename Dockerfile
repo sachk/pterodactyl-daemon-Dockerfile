@@ -2,7 +2,7 @@ FROM node:8-alpine as builder
 
 WORKDIR /srv/daemon
 
-RUN apk add --no-cache --update jq curl wget ca-certificates openssl make gcc g++ python linux-headers paxctl gnupg tar zip un$
+RUN apk add --no-cache --update jq curl wget ca-certificates openssl make gcc g++ python linux-headers paxctl gnupg tar zip unzip coreutils zlib
 
 # aaaaaaah
 RUN DAEMON_VERSION=$(curl -s 'https://api.github.com/repos/pterodactyl/daemon/releases/latest' | jq -r '.tag_name') \
