@@ -8,7 +8,9 @@ Based on [parkervcp's image](https://github.com/parkervcp/pterodactyl-daemon-Doc
 
 *This container requires a host running a recent version of docker and docker-compose*
 
-First, edit the docker-compose.yml file to reflect your setup
+First, clone the repo with ```git clone -b travis https://github.com/sachk/pterodactyl-daemon-dockerfile.git```
+
+Then, change the docker-compose.yml file to reflect your configuration.
 
 In particular, change the **ports** and **volumes** sections
 
@@ -45,7 +47,7 @@ $ docker-compose run daemon npm run configure -- --panel-url <panel_url> --token
 If you don't want to or can't install docker-compose you can run this daemon using a single docker command however, this isn't recommended as it's much easier to make mistakes in the syntax.
 
 ```
-docker run --name pterodactyl-daemon -d -t -p 2022:2022 -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/pterodactyl/:/tmp/pterodactyl -v ./daemon/config/:/srv/daemon/config/ -v ./daemon-data/:/srv/daemon-data/ sachk/pterodactyl-daemon
+docker run --name pterodactyl-daemon -d -t -p 2022:2022 -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/pterodactyl/:/tmp/pterodactyl -v ./daemon/config/:/srv/daemon/config/ -v ./daemon-data/:/srv/daemon-data/ sachk/pterodactyl-daemon:stable
 ```
 
 You can also fetch the daemon config automatically as such following the same variables as above.
