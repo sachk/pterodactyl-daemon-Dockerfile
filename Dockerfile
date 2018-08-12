@@ -1,8 +1,5 @@
 FROM node:8-alpine as builder
 
-# Daemon Version to download
-ENV DAEMON_VERSION=v0.6.3
-
 WORKDIR /srv/daemon
 
 RUN apk add --no-cache --update wget ca-certificates openssl make gcc g++ python linux-headers paxctl gnupg tar zip unzip coreutils zlib \
