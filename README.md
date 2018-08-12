@@ -10,7 +10,9 @@ Based on [parkervcp's image](https://github.com/parkervcp/pterodactyl-daemon-Doc
 
 *This container requires a host running a recent version of docker and docker-compose*
 
-First, edit the docker-compose.yml file to reflect your setup
+First, clone the repo with ```git clone -b travis https://github.com/sachk/pterodactyl-daemon-dockerfile.git```
+
+Then, change the docker-compose.yml file to reflect your configuration.
 
 In particular, change the **ports** and **volumes** sections
 
