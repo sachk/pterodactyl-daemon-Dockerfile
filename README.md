@@ -4,6 +4,8 @@ A container for the pterodactyl daemon utilizing Alpine Linux and multi-stage bu
 
 Based on [parkervcp's image](https://github.com/parkervcp/pterodactyl-daemon-Dockerfile).
 
+#### This branch utilises automatically updated images built using Travis, and is not as stable as the other branches
+
 ## Running with docker-compose (Recommended)
 
 *This container requires a host running a recent version of docker and docker-compose*
