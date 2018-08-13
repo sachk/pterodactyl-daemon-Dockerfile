@@ -1,7 +1,7 @@
 FROM node:8-alpine as builder
 
 # Daemon Version to download
-ENV DAEMON_VERSION=v0.6.3
+ENV DAEMON_VERSION=v0.6.4
 
 WORKDIR /srv/daemon
 
