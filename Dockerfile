@@ -21,4 +21,4 @@ EXPOSE 8080
 
 WORKDIR /srv/daemon
 
-CMD ["npm start"]
+CMD ["npm", "start"]
