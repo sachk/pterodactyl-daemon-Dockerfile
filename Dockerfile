@@ -10,7 +10,7 @@ RUN DAEMON_VERSION=$(curl -s 'https://api.github.com/repos/pterodactyl/daemon/re
  && rm daemon.tar.gz \
  && npm install --production
 
-FROM sachk/alpine-node
+FROM mhart/alpine-node:8
 
 COPY --from=builder /srv/daemon /srv/daemon/
 
